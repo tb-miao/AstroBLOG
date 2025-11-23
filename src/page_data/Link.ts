@@ -10,6 +10,18 @@ export default {
       "descr": "运气是计划之外的东西."
     },
     {
+      "name": "网站服务状态监控系统",
+      "link": "https://www.caonima.cc/",
+      "avatar": "https://www.caonima.cc/favicon.ico",
+      "descr": "网站服务状态监控系统"
+    },
+    {
+      "name": "CoolCat Network Studio",
+      "link": "https://www.coolcat.cn/",
+      "avatar": "https://www.coolcat.cn/favicon.ico",
+      "descr": "专注于IT技术学习和分享，提供网站建设、网站设计与开发",
+    },
+    {
       "name": "yCENzh's Blog",
       "link": "https://fuwari.oh1.top/",
       "avatar": "https://fuwari.oh1.top/avatar.webp",

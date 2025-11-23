@@ -6,4 +6,4 @@
 > 可以使用shell启动了！
 > 需执行`./run.sh`
 
-![](./public/in/avatar.png)
+![](https://avatars.githubusercontent.com/u/172878250?v=4)

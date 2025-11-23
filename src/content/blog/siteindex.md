@@ -10,3 +10,7 @@ top: true
 ---
 
 # 欢迎来到本博客:
+
+## 关于本站
+请访问：
+- [关于](https://tbmiao.dpdns.org/about)
