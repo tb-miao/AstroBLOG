@@ -10,5 +10,12 @@ export default {
       "link": "https://tbmiao.dpdns.org/",
       "content": "网站重写完成啦！"
     },
+    {
+      "title": "推荐一条视频",
+      "auther": "AUNya",
+      "date": "2025-11-23",
+      "link": "https://www.bilibili.com/video/BV1qdJ2zFEsi",
+      "content": "点击观看"
+    },
   ]
 }
