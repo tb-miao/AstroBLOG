@@ -16,7 +16,7 @@ export default {
   // Cover 网站缩略图
   Cover: 'https://avatars.githubusercontent.com/u/172878250?v=4',
   // 网站侧边栏公告 (不填写即不开启)
-  Tips: '<p>欢迎光临我的博客 🎉</p><p>这里会分享我的日常和学习中的收集、整理及总结，希望能对你有所帮助:) 💖</p>',
+  Tips: '<p>欢迎光临我的博客 🎉</p><p>网站全新升级完成，欢迎访问！</p>',
   // 首页打字机文案列表
   TypeWriteList: [
     'AUNyaの小窝',
@@ -31,7 +31,7 @@ export default {
     // 其他页面高度
     PageHeight: '28.88rem',
     // 背景
-    background: "url('/images/lt/b.png') no-repeat center 60%/cover",
+    background: "url('/images/lt/b.png') no-repeat center 50%/cover",
   },
   // 博客主题配置
   Theme: {
@@ -56,6 +56,7 @@ export default {
     { text: '昔日', link: '/archives', icon: 'Nav_archives' },
     { text: '留言', link: '/message', icon: 'Nav_message' },
     { text: '关于', link: '/about', icon: 'Nav_about' },
+    { text: '统计', link: 'https://cloud.umami.is/share/pBFqYW1e5248KxEz', icon: 'WebSite_world' },
   ],
   // 侧边栏个人网站
   WebSites: [
@@ -63,7 +64,6 @@ export default {
     // 建议使用 https://tabler.io/icons 直接下载 SVG
     { text: 'Github', link: 'https://github.com/tb-miao', icon: 'WebSite_github' },
     { text: 'lab', link: 'https://lab.tbmiao.dpdns.org', icon: 'WebSite_lab' },
-    { text: '统计', link: 'https://cloud.umami.is/share/pBFqYW1e5248KxEz', icon: 'WebSite_world' },
     { text: '状态', link: 'https://status.tbmiao.dpdns.org', icon: 'WebSite_status' },
   ],
   // 侧边栏展示
@@ -111,13 +111,7 @@ export default {
   // 文章页广告(不填不开启)
     articleAD_Slot: ``
   },
-  // 文章内赞赏码
-  Reward: {
-    // 支付宝收款码
-    AliPay: '',
-  // 微信收款码
-    WeChat: ''
-  },
+
   // 访问网页 自动推送到搜索引擎
   SeoPush: {
     enable: false,

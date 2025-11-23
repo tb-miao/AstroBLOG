@@ -1,8 +1,6 @@
 import { inRouter, outRouter } from "@/utils/updateRouter";
 // Banner 打字效果
 import TypeWriteInit from "@/scripts/TypeWrite";
-// 泡泡🫧效果
-import PaoPaoInit from "@/scripts/PaoPao";
 // 初始化文章代码块
 import codeInit from "@/scripts/Code";
 // 初始化视频播放器
@@ -31,8 +29,6 @@ import initTalking from "@/scripts/Talking";
 import { checkComment, commentInit } from "@/scripts/Comment";
 // 移动端侧边栏初始化
 import initMobileSidebar from "@/scripts/MobileSidebar";
-// Google 广告
-import GoogleAdInit from "@/scripts/GoogleAd";
 // Han Analytics 统计
 import HanAnalyticsInit from "@/scripts/HanAnalytics";
 //  谷歌 SEO 推送
@@ -71,8 +67,6 @@ const indexInit = async (only: boolean = true) => {
   initFriends();
   // 动态说说初始化
   initTalking();
-  // Google 广告
-  GoogleAdInit();
   // 谷歌 SEO 推送
   SeoPushInit();
   // 文章评论初始化
@@ -81,8 +75,6 @@ const indexInit = async (only: boolean = true) => {
   HanAnalyticsInit();
   // 打字效果
   only && TypeWriteInit();
-  // 泡泡🫧效果
-  PaoPaoInit();
   // 预加载搜索数据
   only && searchFn("");
   // 初始化搜索功能
@@ -108,6 +100,19 @@ export default () => {
     MusicList.forEach((i: any) => i.destroy());
     MusicList.length = 0;
   });
+
+      console.log(
+          '%c                                                \n' +
+          '%c%c%c █████╗  ██╗   ██╗ ███╗   ██╗ ██╗   ██╗  █████╗ \n' +
+          '%c%c%c██╔══██╗ ██║   ██║ ████╗  ██║ ╚██╗ ██╔╝ ██╔══██╗\n' +
+          '%c%c%c███████║ ██║   ██║ ██╔██╗ ██║  ╚████╔╝  ███████║\n' +
+          '%c%c%c██╔══██║ ██║   ██║ ██║╚██╗██║   ╚██╔╝   ██╔══██║\n' +
+          '%c%c██║  ██║ ╚██████╔╝ ██║ ╚████║    ██║    ██║  ██║\n' +
+          '%c╚═╝  ╚═╝  ╚═════╝  ╚═╝  ╚═══╝    ╚═╝    ╚═╝  ╚═╝\n' +
+          '%c                                                \n' +
+          '        你好，用户！欢迎来到“AUNyaの小窝”             \n' +
+          '%c        地址：https://tbmiao.dpdns.org/              \n' +
+          '   ','color:#ff0000','color:#ff0000','color:#ff3b00','color:#ff7500','color:#ff7800','color:#FD7B00','color:#FFAD00','color: #FEDA00','color:#D0FD00','color:#93FF00','color:#80FF00','color:#1AFF00','color:#00FF2E','color:#00FF3B','color:#00FFB1','color:#00F2F9','color:#00E0F9');
   console.log("%c🌻 程序：Astro | 主题：vhAstro-Theme | 作者：Han | Github：https://github.com/uxiaohan/vhAstro-Theme 🌻", "color:#fff; background: linear-gradient(270deg, #18d7d3, #68b7dd, #8695e6, #986fee); padding: 8px 15px; border-radius: 8px");
   console.log("%c\u521D\u59CB\u5316\u5B8C\u6BD5.", "color: #ffffff; background: #000; padding:5px");
 }
