@@ -37,9 +37,9 @@ export default {
   Theme: {
     // 颜色请用 16 进制颜色码
     // 主题颜色
-    "--vh-main-color": "#c40179ff",
+    "--vh-main-color": "#ff69b4",
     // 字体颜色
-    "--vh-font-color": "#10c7f5ff",
+    "--vh-font-color": "#8e44ad",
     // 侧边栏宽度
     "--vh-aside-width": "318px",
     // 全局圆角
