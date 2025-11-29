@@ -8,7 +8,7 @@ export default {
   // 网站描述
   Description: '分享网络技术、服务器部署、内网穿透、静态网站搭建、CDN优化、容器化部署等技术教程与实践经验的个人技术博客，专注于云原生、无服务器架构和前后端开发，作者为AUNya',
   // 网站作者
-  Author: '.AUNya',
+  Author: 'AUNya',
   // 作者头像
   Avatar: 'https://avatars.githubusercontent.com/u/172878250?v=4',
   // 网站座右铭
@@ -16,7 +16,7 @@ export default {
   // Cover 网站缩略图
   Cover: 'https://avatars.githubusercontent.com/u/172878250?v=4',
   // 网站侧边栏公告 (不填写即不开启)
-  Tips: '<p>欢迎光临我的博客 🎉</p><p>网站全新升级完成，欢迎访问！</p>',
+  Tips: '<p>欢迎光临我的博客 🎉</p>',
   // 首页打字机文案列表
   TypeWriteList: [
     'AUNyaの小窝',
@@ -39,7 +39,7 @@ export default {
     // 主题颜色
     "--vh-main-color": "#c40179ff",
     // 字体颜色
-    "--vh-font-color": "#66c2daff",
+    "--vh-font-color": "#10c7f5ff",
     // 侧边栏宽度
     "--vh-aside-width": "318px",
     // 全局圆角

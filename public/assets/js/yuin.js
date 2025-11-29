@@ -1,3 +1,7 @@
+
+// 目前本插件出现错误，暂时不修复，已取消引用
+// 2025-11-29-8-54
+
 const officialSites = [
   "https://tbmiao.dpdns.org",
 ];

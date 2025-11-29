@@ -4,7 +4,7 @@ categories: 笔记
 tags: ["工具"]
 id: "HiBit-Uninstaller"
 date: 2024-11-27 17:11:54
-cover: "http://localhost:4321/images/xzgj%5CHiBit-Uninstaller%5CHiBit-Uninstaller.png"
+cover: "/images/xzgj/HiBit-Uninstaller/HiBit-Uninstaller.png"
 recommend: false
 top: false
 ---

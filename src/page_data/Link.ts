@@ -51,5 +51,23 @@ export default {
       "avatar": "https://blog-backend.alexma.top/api/v2/objects/avatar/112zjnt1f3c2cf3prp.webp",
       "descr": "Create things with love."
     },
+    {
+      "name": "Geekertao's Blog",
+      "link": "https://blog.geekertao.top/",
+      "avatar": "https://obj.geekertao.top/geekertao.jpg",
+      "descr": "Geekertao's Blog"
+    },
+    {
+      "name": "Geekertao 's 主页",
+      "link": "https://geekertao.top/",
+      "avatar": "https://obj.geekertao.top/geekertao.jpg",
+      "descr": "Geekertao 's 主页"
+    },
+    {
+      "name": "表极客",
+      "link": "https://watchgeek.cn/",
+      "avatar": "https://cdn.leidell.cn/watchgeek.png",
+      "descr": "表极客致力于打造一站式智能手表应用资源平台，提供丰富的应用下载、教程分享和技术支持。"
+    },
   ]
 }

@@ -2,8 +2,7 @@
 const { title, keywords, description, pagecover, activeNav, Home } = Astro.props;
 // 网站配置
 import SITE_INFO from "@/config";
-const { GoogleAds, Theme, HomeBanner } = SITE_INFO;
-const { ad_Client, asideAD_Slot, articleAD_Slot } = GoogleAds;
+const {Theme, HomeBanner } = SITE_INFO;
 // Head 依赖
 import Head from "@/components/Head/Head.astro";
 // 顶部 Header
@@ -28,12 +27,10 @@ import "./Layout.less";
 
 <html lang="zh-CN">
 	<Head Title={title} Keywords={keywords} Description={description} PageCover={pagecover}>
-		<!-- 域名检测 -->
-		<script is:inline src="/assets/js/yuin.js" defer></script>
+		<!-- 域名检测 
+		<script is:inline src="/assets/js/yuin.js" defer></script>-->
 		<!-- umami统计 -->
 		<script defer src="https://cloud.umami.is/script.js" data-website-id="50cd57c4-1d49-4941-88d5-b1cce22ee6a1"></script>
-		<!-- 彩旗🎈 -->
-		<script is:inline src="/assets/js/vhCaiqi.js" defer></script>
 		<!-- 设置主题颜色 -->
 		<Fragment
 			set:html={`<style>:root {${Object.entries(Theme)

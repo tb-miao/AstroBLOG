@@ -1,7 +1,7 @@
 ---
 title: "使用Vue搭建文档"
 categories: VitePress
-tags: ["Vue", ""]
+tags: ["Vue", "VitePress"]
 id: "VitePress-docs"
 date: 2025-08-29 09:49:00
 cover: "https://cn.vuejs.org/logo.svg"

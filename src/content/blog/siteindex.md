@@ -3,8 +3,8 @@ title: "入站指引"
 categories: 入站指引
 tags: ["入站指引"]
 id: "siteindex"
-date: 2025-10-11 20:26:00
-cover: "https://uapis.cn/assets/acg/pc/0072Vf1pgy1foxkf96kuyj31hc0u04kb.jpg"
+date: 2025-11-29 08:55:00
+cover: "https://uapis.cn/assets/acg/pc/110384802_p0.jpg"
 recommend: true
 top: true
 ---

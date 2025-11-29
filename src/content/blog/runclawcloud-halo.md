@@ -19,7 +19,7 @@ ClawCloud Run 是一个集成在线开发、测试和生产环境的云开发平
 建议直接使用  *GitHub* 注册，免去绑定的步骤，当然也可以用其他邮箱注册再绑定 github
 :::
 
-# 计划
+## 计划
 For every newly registered user, ClawCloud Run will offer a benefit of $5. The validity period of this complimentary amount is one month. If you bind your GitHub account within one month after registration, you will receive an additional $5 every month thereafter, and the validity period of this subsequent gift is also one month. 对于每一个新注册的用户，ClawCloud Run 将提供 5 美元的优惠。此赠品的有效期为一个月。如果您在注册后一个月内绑定 GitHub 账户，则此后每个月都会额外获得 5 美元，而这份后续礼物的有效期也是一个月。
 
 To prevent resource wastage, ClawCloud Run reserves the right to manage resource allocation for users of the free plan. 为防止资源浪费，ClawCloud Run 保留为免费计划的用户管理资源分配的权利。
@@ -63,5 +63,5 @@ JVM_OPTS=-Xmx900m -Xms256m
 31 天：`0.16$/day*31day=4.96$`
 确认无误，点击 `Deploy Application`部署即可
 
-# 参考：
+## 参考：
 https://blog.seektao.cc/p/250412200248/#halo
