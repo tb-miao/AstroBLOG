@@ -19,6 +19,7 @@ top: false
 
 
 ![](/images/windows-jh/1.jpg)
+
 1.2. 复制以下命令到Powershell窗口, 回车
 ```
 irm https://get.activated.win | iex
