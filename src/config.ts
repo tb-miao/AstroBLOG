@@ -101,7 +101,7 @@ export default {
       serverURL: 'https://wa.tbmiao.dpdns.org'
     }
   },
-  // Han Analytics 统计（https://github.com/uxiaohan/HanAnalytics）
+  // Han Analytics 统计（https://github.com/uxiaohan/HanAnalytics） 已🈲用
   HanAnalytics: { enable: false, server: '', siteId: '' },
   // Google 广告
    GoogleAds: {

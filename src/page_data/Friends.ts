@@ -17,5 +17,12 @@ export default {
       "link": "https://www.bilibili.com/video/BV1qdJ2zFEsi",
       "content": "点击观看"
     },
+    {
+      "title": "关于页面添加新功能",
+      "auther": "AUNya",
+      "date": "2025-12-2",
+      "link": "https://tbmiao.dpdns.org/about",
+      "content": "网站的关于页面添加了新的功能，欢迎体验！"
+    },
   ]
 }

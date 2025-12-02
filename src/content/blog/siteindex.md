@@ -14,3 +14,9 @@ top: true
 ## 关于本站
 请访问：
 - [关于](https://tbmiao.dpdns.org/about)
+
+:::note{type="success"}
+新功能！！
+
+在[关于](https://tbmiao.dpdns.org/about)页面，新增了‘日志’功能，你可以在这里查看网站的更新日志。
+:::
