@@ -8,6 +8,4 @@
 > 可以使用shell启动了！
 > 需执行`./run.sh`
 
-> 新增日志功能，查看：[https://tbmiao.dpdns.org/about](https://tbmiao.dpdns.org/about/#%E6%97%A5%E5%BF%97)
-
 ![](https://avatars.githubusercontent.com/u/172878250?v=4)
