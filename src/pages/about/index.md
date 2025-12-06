@@ -40,3 +40,56 @@ type: "about"
 > <div id="git-info"></div>
 
 <style>.enfj-dom{margin:1rem 0;position:relative;box-sizing:border-box;padding:1rem 2rem;display:flex;justify-content:space-between;width:100%;height:16rem;background:#fff;border:1px solid #e3e8f7;border-radius:12px;box-shadow:0 8px 16px -4px #2c2d300c;overflow:hidden;background:url("/assets/images/enfj.webp") no-repeat;background-size:8.8rem auto;background-position:right 2rem;transition:all .36s}.enfj-dom:hover{background-position:right 1.6rem}.enfj-dom>.text{display:flex;flex-direction:column;width:100%}.enfj-dom>.text>em,.enfj-dom>.text>span{padding:0;margin:0;font-size:2rem;cursor:default;line-height:2.6rem;font-style:normal}.enfj-dom>.text>span{font-weight:bold;color:#33a474}.enfj-dom>.text>a.more-enfj{margin-top:auto;color:#999 !important;font-size:.88rem !important;text-decoration:none !important}</style>
+
+<script>
+// 显示git信息
+document.addEventListener('DOMContentLoaded', function() {
+  const gitInfoElement = document.getElementById('git-info');
+  
+  if (!gitInfoElement) return;
+
+  fetch('https://api.github.com/repos/tb-miao/AstroBLOG/commits')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      let allCommitsInfo = '';
+      
+      // 显示最近的10条提交信息
+      const commitsToShow = data.slice(0, 10);
+      
+      commitsToShow.forEach(commit => {
+        const commitDate = new Date(commit.commit.author.date);
+        const formattedDate = commitDate.toLocaleString('zh-CN', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+        
+        const commitMessage = commit.commit.message;
+        const commitUrl = commit.html_url;
+        const commitSha = commit.sha.substring(0, 7);
+        const authorName = commit.commit.author.name;
+        
+        const commitInfo = `
+              ## <b>##### ${formattedDate}</b> - <a href='${commitUrl}' target='_blank'  style='color: #013cffff'>${commitSha}</a>
+              <p>${commitMessage}</p><br>
+        `;
+        
+        allCommitsInfo += commitInfo;
+      });
+      
+      gitInfoElement.innerHTML = allCommitsInfo;
+    })
+    .catch(error => {
+      console.error('获取GitHub提交信息失败:', error);
+      gitInfoElement.innerHTML = '<p>无法获取更新信息</p>';
+    });
+    console.log('JS加载成功')
+});
+</script>
