@@ -1,22 +1,38 @@
-import { glob } from 'astro/loaders';
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
-const blog = defineCollection({
-	// Load Markdown and MDX files in the `src/content/blog/` directory.
-	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
-	// Type-check frontmatter using a schema
+const postsCollection = defineCollection({
+	loader: glob({ pattern: "**/*.md", base: "./src/content/posts" }),
 	schema: z.object({
 		title: z.string(),
-		date: z.coerce.date(),
-		updated: z.coerce.date().optional(),
-		categories: z.string(),
-		tags: z.array(z.union([z.string(), z.number()])).optional(),
-		id: z.union([z.string(), z.number()]),
-		cover: z.string().optional(),
-		recommend: z.boolean().optional(),
-		hide: z.boolean().optional(),
-		top: z.boolean().optional()
+		published: z.date(),
+		updated: z.date().optional(),
+		draft: z.boolean().optional().default(false),
+		description: z.string().optional().default(""),
+		image: z.string().optional().default(""),
+		tags: z.array(z.string()).optional().default([]),
+		category: z.string().optional().nullable().default(""),
+		lang: z.string().optional().default(""),
+		pinned: z.boolean().optional().default(false),
+		author: z.string().optional().default(""),
+		sourceLink: z.string().optional().default(""),
+		licenseName: z.string().optional().default(""),
+		licenseUrl: z.string().optional().default(""),
+
+		/* For internal use */
+		prevTitle: z.string().default(""),
+		prevSlug: z.string().default(""),
+		nextTitle: z.string().default(""),
+		nextSlug: z.string().default(""),
 	}),
 });
 
-export const collections = { blog };
+const specCollection = defineCollection({
+	loader: glob({ pattern: "**/*.md", base: "./src/content/spec" }),
+	schema: z.object({}),
+});
+
+export const collections = {
+	posts: postsCollection,
+	spec: specCollection,
+};
