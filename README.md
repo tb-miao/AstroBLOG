@@ -5,23 +5,9 @@
 
 # Firefly
 > 一款清新美观的 Astro 博客主题模板
-> 
-> ![Node.js >= 20](https://img.shields.io/badge/node.js-%3E%3D20-brightgreen) 
-![pnpm >= 9](https://img.shields.io/badge/pnpm-%3E%3D9-blue)
-![Astro](https://img.shields.io/badge/Astro-5.16.5-orange)
-![GitHub License](https://img.shields.io/github/license/CuteLeaf/Firefly)
-</div>
 
 
 ---
-🚀 快速指南：
-[**🖥️在线预览**](https://firefly.cuteleaf.cn/) /
-[**📝使用文档**](https://docs-firefly.cuteleaf.cn/) /
-[**🍀我的博客**](https://blog.cuteleaf.cn) 
-
-📖 README：
-**[简体中文](README.md)** | **[English](README.en.md)** | **[日本語](docs/README.ja.md)** | **[Русский](docs/README.ru.md)**
-
 ⚡ 静态站点生成: 基于Astro的超快加载速度和SEO优化
 
 🎨 现代化设计: 简洁美观的界面，支持自定义主题色
@@ -30,7 +16,6 @@
 
 🔧 高度可配置: 大部分功能模块均可通过配置文件自定义
 
-<img alt="firefly" src="./docs/images/1.webp" />
 
 >[!TIP]
 >在重要的布局上，Firefly 创新性地增加了左右双侧边栏、文章网格(双列)布局，
@@ -100,80 +85,6 @@
 
 如果你有好用的功能和优化，请提交 [Pull Request](https://github.com/CuteLeaf/Firefly/pulls)
 
-## 🚀 快速开始
-
-### 环境要求
-
-- Node.js ≤ 22
-- pnpm ≤ 9
-
-### 本地开发部署
-
-1. **克隆仓库：**
-   ```bash
-   git clone https://github.com/Cuteleaf/Firefly.git
-   cd Firefly
-   ```
-   **先 [Fork](https://github.com/CuteLeaf/Firefly/fork) 到自己仓库在克隆（推荐）**
-   ```bash
-   git clone https://github.com/you-github-name/Firefly.git
-   cd Firefly
-   ```
-3. **安装依赖：**
-   ```bash
-   # 如果没有安装 pnpm，先安装
-   npm install -g pnpm
-   
-   # 安装项目依赖
-   pnpm install
-   ```
-
-4. **配置博客：**
-   - 编辑 `src/config/` 目录下的配置文件自定义博客设置
-
-5. **启动开发服务器：**
-   ```bash
-   pnpm dev
-   ```
-   博客将在 `http://localhost:4321` 可用
-
-### 平台托管部署
-- **参考[官方指南](https://docs.astro.build/zh-cn/guides/deploy/)将博客部署至 Vercel, Netlify, GitHub Pages, Cloudflare Pages, EdgeOne Pages 等。**
-
-   框架预设： `Astro`
-
-   根目录： `./`
-
-   输出目录： `dist`
-
-   构建命令： `pnpm run build`
-
-   安装命令： `pnpm install`
-
-
-## 📖 配置说明
-
-> 📚 **详细配置文档**: 查看 [Firefly使用文档](https://docs-firefly.cuteleaf.cn/) 获取完整的配置指南
-
-### 设置网站语言
-
-要设置博客的默认语言，请编辑 `src/config/siteConfig.ts` 文件：
-
-```typescript
-// 定义站点语言
-const SITE_LANG = "zh_CN";
-```
-
-**支持的语言代码：**
-- `zh_CN` - 简体中文
-- `zh_TW` - 繁体中文
-- `en` - 英文
-- `ja` - 日文
-- `ru` - 俄文
-
-
-### 配置文件结构
-
 ```
 src/
 ├── config/
@@ -198,68 +109,6 @@ src/
 │   └── coverImageConfig.ts  # 文章随机封面图配置
 ```
 
-
-## ⚙️ 文章 Frontmatter
-
-```yaml
----
-title: My First Blog Post
-published: 2023-09-09
-description: This is the first post of my new Astro blog.
-image: ./cover.jpg  # 或使用 "api" 来启用随机封面图
-tags: [Foo, Bar]
-category: Front-end
-draft: false
-lang: zh-CN      # 仅当文章语言与 `siteConfig.ts` 中的网站语言不同时需要设置
----
-```
-
-## 🧞 指令
-
-下列指令均需要在项目根目录执行：
-
-| Command                           | Action                            |
-|:----------------------------------|:----------------------------------|
-| `pnpm install` 并 `pnpm add sharp` | 安装依赖                              |
-| `pnpm dev`                        | 在 `localhost:4321` 启动本地开发服务器      |
-| `pnpm build`                      | 构建网站至 `./dist/`                   |
-| `pnpm preview`                    | 本地预览已构建的网站                        |
-| `pnpm new-post <filename>`        | 创建新文章                             |
-| `pnpm astro ...`                  | 执行 `astro add`, `astro check` 等指令 |
-| `pnpm astro --help`               | 显示 Astro CLI 帮助                   |
-
-## 🙏 致谢
-
-- 非常感谢 [saicaca](https://github.com/saicaca) 开发的 [Fuwari](https://github.com/saicaca/fuwari) 模板，Firefly 就是基于这个模板二次开发
-- 参考了博主 [霞葉](https://kasuha.com) 分享的 [Bangumi 收藏展示](https://kasuha.com/posts/fuwari-enhance-ep2/) 和 [邮箱保护/图片标题](https://kasuha.com/posts/fuwari-enhance-ep1/) 方案
-- 参考了 [Mizuki](https://github.com/matsuzaka-yuki/Mizuki) 的横幅标题/多级菜单导航栏/樱花特效/KaTeX/Fancybox方案
-- 使用了 [Astro](https://astro.build) 和 [Tailwind CSS](https://tailwindcss.com) 构建
-- 使用了 [MetingJS](https://github.com/metowolf/MetingJS) 和 [APlayer](https://github.com/MoePlayer/APlayer) 音乐播放器
-- 使用了b站up [公公的日常](https://space.bilibili.com/3546750017080050) 提供的Q版 `流萤` 看板娘切片数据模型
-- 图标来自 [Iconify](https://iconify.design/)
-- 流萤部分相关图片素材版权归游戏 [《崩坏：星穹铁道》](https://sr.mihoyo.com/) 开发商 [米哈游](https://www.mihoyo.com/) 所有
-
-## 📝 许可协议
-
-本项目遵循 [MIT license](https://mit-license.org/) 开源协议，详细查看 [LICENSE](./LICENSE) 文件，
-
-最初 Fork 自 [saicaca/fuwari](https://github.com/saicaca/fuwari)，感谢原作者的贡献，原项目采用 [MIT license](https://mit-license.org/)。
-
-## 🍀 贡献者
-
-感谢以下贡献者对本项目做出的贡献，如有问题或建议，请提交 [Issue](https://github.com/CuteLeaf/Firefly/issues) 或 [Pull Request](https://github.com/CuteLeaf/Firefly/pulls)。
-
-<a href="https://github.com/CuteLeaf/Firefly/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=CuteLeaf/Firefly" />
-</a>
-
-![Alt](https://repobeats.axiom.co/api/embed/6139639d8e88da4d3dc9d45fd43f4e4b2d580086.svg "Repobeats analytics image")
-
-## ⭐ Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=CuteLeaf/Firefly&type=Date)](https://star-history.com/#CuteLeaf/Firefly&Date)
-
-
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -268,3 +117,5 @@ lang: zh-CN      # 仅当文章语言与 `siteConfig.ts` 中的网站语言不�
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
+![](https://avatars.githubusercontent.com/u/172878250?v=4)

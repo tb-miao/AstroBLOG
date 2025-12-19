@@ -24,8 +24,8 @@ export const siteConfig: SiteConfig = {
 	lang: SITE_LANG,
 
 	themeColor: {
-		hue: 355, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
-		fixed: false, // 对访问者隐藏主题色选择器
+		hue: 350, // 主题色的默认色相，范围从 0 到 360。例如：红色：0，青色：200，蓝绿色：250，粉色：345
+		fixed: true, // 对访问者隐藏主题色选择器
 		defaultMode: "system", // 默认模式："light" 亮色，"dark" 暗色，"system" 跟随系统
 	},
 
@@ -45,7 +45,7 @@ export const siteConfig: SiteConfig = {
 	// { type: "image", value: "https://example.com/logo.png", alt: "Firefly Logo" }
 	navbarLogo: {
 		type: "image",
-		value: "/assets/images/LiuYingPure3.svg",
+		value: "/assets/images/favicon.ico",
 		alt: "🍀",
 	},
 	navbarTitle: "AUNyaの小窝", // 导航栏标题，可以设置为与 title 不同的值，如果不设置则使用 title
@@ -79,7 +79,7 @@ export const siteConfig: SiteConfig = {
 		// 如果sidebarConfig.ts中侧边栏配置启用了"both"双侧边栏，则无法使用文章列表"grid"网格（双列）布局
 		defaultMode: "list",
 		// 是否允许用户切换布局
-		allowSwitch: true,
+		allowSwitch: false,
 	},
 
 	// 分页配置
@@ -90,9 +90,9 @@ export const siteConfig: SiteConfig = {
 
 	backgroundWallpaper: {
 		// 壁纸模式："banner" 横幅壁纸，"overlay" 全屏壁纸，"none" 纯色背景无壁纸
-		mode: "banner",
+		mode: "overlay",
 		// 是否允许用户通过导航栏切换壁纸模式，设为false可提升性能（只渲染当前模式）
-		switchable: true,
+		switchable: false,
 
 		// 背景图片配置
 		src: {

@@ -1,7 +1,7 @@
 ---
 title: 入站指引
 published: 2025-11-29
-pinned: false
+pinned: true
 description: "入站指引"
 image: "https://uapis.cn/assets/acg/pc/110384802_p0.jpg"
 tags: ["入站指引"]
