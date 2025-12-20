@@ -2,7 +2,7 @@ import type { AnnouncementConfig } from "../types/config";
 
 export const announcementConfig: AnnouncementConfig = {
 	title: "公告", // 公告标题
-	content: "本站1周年啦！", // 公告内容
+	content: "欢迎来到我的博客！本站1周年啦！", // 公告内容
 	closable: false, // 允许用户关闭公告
 	link: {
 		enable: false, // 启用链接

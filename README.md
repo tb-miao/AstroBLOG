@@ -6,7 +6,7 @@
 # Firefly
 > 一款清新美观的 Astro 博客主题模板
 
-
+github地址：[https://github.com/CuteLeaf/Firefly](https://github.com/CuteLeaf/Firefly)
 ---
 ⚡ 静态站点生成: 基于Astro的超快加载速度和SEO优化
 

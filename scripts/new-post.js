@@ -15,8 +15,8 @@ function getDate() {
 const args = process.argv.slice(2)
 
 if (args.length === 0) {
-  console.error(`Error: No filename argument provided
-Usage: npm run new-post -- <filename>`)
+  console.error(`错误：未提供文件名参数
+用法：pnpm new-post -- <filename>`)
   process.exit(1) // Terminate the script and return error code 1
 }
 
@@ -46,7 +46,7 @@ const content = `---
 title: ${args[0]}
 published: ${getDate()}
 description: ''
-image: ''
+image: "api"
 tags: []
 category: ''
 draft: false 
@@ -57,4 +57,11 @@ slug:
 
 fs.writeFileSync(path.join(targetDir, fileName), content)
 
-console.log(`Post ${fullPath} created`)
+console.log("███████╗██╗██████╗ ███████╗███████╗██╗  ██╗   ██╗");
+console.log("██╔════╝██║██╔══██╗██╔════╝██╔════╝██║  ╚██╗ ██╔╝");
+console.log("█████╗  ██║██████╔╝█████╗  █████╗  ██║   ╚████╔╝ ");
+console.log("██╔══╝  ██║██╔══██╗██╔══╝  ██╔══╝  ██║    ╚██╔╝  ");
+console.log("██║     ██║██║  ██║███████╗██║     ███████╗██║   ");
+console.log("╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝╚═╝     ╚══════╝╚═╝   ");
+console.log("                                                 ");
+console.log(`✅ 文章 ${fullPath} 创建成功`);

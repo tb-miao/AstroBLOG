@@ -10,7 +10,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "AUNya的碎碎念.",
 	site_url: "https://tbmiao.dpdns.org/",
 	description:
-		"Firefly 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。分享网络技术、服务器部署、内网穿透、静态网站搭建、CDN优化、容器化部署等技术教程与实践经验的个人技术博客，专注于云原生、无服务器架构和前后端开发，作者为AUNya",
+		"Firefly 是一款基于 Astro 框架和 Fuwari 模板开发的清新美观且现代化个人博客主题模板，专为技术爱好者和内容创作者设计。该主题融合了现代 Web 技术栈，提供了丰富的功能模块和高度可定制的界面，让您能够轻松打造出专业且美观的个人博客网站。",
 	keywords: [
 		"Firefly",
 		"Fuwari",
@@ -45,7 +45,7 @@ export const siteConfig: SiteConfig = {
 	// { type: "image", value: "https://example.com/logo.png", alt: "Firefly Logo" }
 	navbarLogo: {
 		type: "image",
-		value: "/assets/images/favicon.ico",
+		value: "/assets/images/LiuYingPure3.svg",
 		alt: "🍀",
 	},
 	navbarTitle: "AUNyaの小窝", // 导航栏标题，可以设置为与 title 不同的值，如果不设置则使用 title
@@ -80,6 +80,12 @@ export const siteConfig: SiteConfig = {
 		defaultMode: "list",
 		// 是否允许用户切换布局
 		allowSwitch: false,
+
+		// 网格布局配置，仅在 defaultMode 为 "grid" 或允许切换布局时生效
+		grid: {
+			// 是否开启瀑布流布局，同时有封面图和无封面图的混合文章推荐开启
+			masonry: true,
+		},
 	},
 
 	// 分页配置
@@ -89,7 +95,7 @@ export const siteConfig: SiteConfig = {
 	},
 
 	backgroundWallpaper: {
-		// 壁纸模式："banner" 横幅壁纸，"overlay" 全屏壁纸，"none" 纯色背景无壁纸
+		// 壁纸模式："banner" 横幅壁纸，"overlay" 全屏透明，"none" 纯色背景无壁纸
 		mode: "overlay",
 		// 是否允许用户通过导航栏切换壁纸模式，设为false可提升性能（只渲染当前模式）
 		switchable: false,
@@ -97,9 +103,9 @@ export const siteConfig: SiteConfig = {
 		// 背景图片配置
 		src: {
 			// 桌面背景图片
-			desktop: "https://uapis.cn/api/v1/random/image?category=acg&type=pc",
+			desktop: "https://www.dmoe.cc/random.php",
 			// 移动背景图片
-			mobile: "https://uapis.cn/api/v1/random/image?category=acg&type=mb",
+			mobile: "https://www.dmoe.cc/random.php",
 		},
 
 		// Banner模式特有配置

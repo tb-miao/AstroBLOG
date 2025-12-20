@@ -60,7 +60,7 @@ export const friendsConfig: FriendLink[] = [
 	},
 	{
 		title: "yCENzh's Blog",
-		imgurl: "https://fuwari.oh1.top/avatar.webp",
+		imgurl: "https://ico.kucat.cn/get.php?url=https://fuwari.oh1.top",
 		desc: "Ciallo～(∠・ω&lt; )⌒☆ ",
 		siteurl: "https://fuwari.oh1.top",
 		tags: ["Blog"],
@@ -98,7 +98,7 @@ export const friendsConfig: FriendLink[] = [
 		title: "Geekertao's Blog",
 		imgurl: "https://obj.geekertao.top/geekertao.jpg",
 		desc: "Geekertao's Blog",
-		siteurl: "https://blog.geekertao.top/",
+		siteurl: "https://www.geekertao.com/",
 		tags: ["Geekertao's Blog"],
 		weight: 11, // 权重，数字越大排序越靠前
 		enabled: true, // 是否启用

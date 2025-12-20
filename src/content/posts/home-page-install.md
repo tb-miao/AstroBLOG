@@ -3,7 +3,7 @@ title: 搭建个人主页
 published: 2025-10-25
 pinned: false
 description: "搭建个人主页"
-image: "https://github.com/user-attachments/assets/7d394bbd-c4ed-4398-a551-104237f90c4e"
+image: "/images/home-page/502824092-7d394bbd-c4ed-4398-a551-104237f90c4e.png"
 tags: ["homepage"]
 category: 笔记
 draft: false

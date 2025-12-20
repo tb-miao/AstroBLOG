@@ -32,6 +32,12 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 				external: true,
 				icon: "fa6-brands:bilibili",
 			},
+			{
+				name: "Github文件加速",
+				url: "https://gh-proxy.com/",
+				external: true,
+				icon: "fa6-brands:github",
+			},
 		],
 	});
 
