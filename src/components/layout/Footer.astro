@@ -36,7 +36,7 @@ if (footerConfig.enable) {
 >
   <div class="transition text-50 text-sm text-center">
     {customFooterHtml && <div class="mb-2" set:html={customFooterHtml} />}
-    &copy; <span id="copyright-year">{currentYear}</span>
+    <b>&copy; 2024-<span id="copyright-year">{currentYear}</span>
     {profileConfig.name}. All Rights Reserved. /
     <a
       class="transition link text-[var(--primary)] font-medium"
@@ -48,8 +48,8 @@ if (footerConfig.enable) {
       class="transition link text-[var(--primary)] font-medium"
       target="_blank"
       href={url("sitemap-index.xml")}>Sitemap</a
-    ><br />
-    Powered by
+    ></b><br />
+    <b>Powered by
     <a
       class="transition link text-[var(--primary)] font-medium"
       target="_blank"
@@ -59,8 +59,22 @@ if (footerConfig.enable) {
       class="transition link text-[var(--primary)] font-medium"
       target="_blank"
       href="https://github.com/CuteLeaf/Firefly">Firefly</a
-    ><br />
-    
+    ></b><br />
+    <div class="badge-item">
+      <a href="https://ssl.caonima.cc/?domain=tbmiao.dpdns.org" title="SSL证书安全检测" target="_blank" class="badge-link">
+        <img src="https://ssl.caonima.cc/static/images/sslsafe.png" 
+             alt="SSL证书安全检测" class="badge-image ssl-badge">
+      </a><br />
+      <a onclick="window.open('https://www.trustssl.cc/trust.php?sn=dGJtaWFvLmRwZG5zLm9yZw==','Trust SSL安全签章','height=1000,width=560')" 
+         title="Trust SSL安全认证签章" target="_blank" class="badge-link">
+        <img src="https://static.coolcdn.cn/images/TrustSSL.png" 
+             alt="Trust SSL安全认证签章" class="badge-image trust-badge">
+      </a><br />
+    </div>
+      <a href="https://www.trustssl.cc/ipv6.php?domain=tbmiao.dpdns.org" title="本站已支持IPv6访问" target="_blank" class="badge-link">
+        <img src="https://static.coolcdn.cn/images/ipv6.svg" 
+             alt="本站已支持IPv6访问" class="badge-image">
+      </a><br />
     <!-- 
       注意：请勿随意修改或删除 "Powered by Astro & Firefly" 部分，这是对开源项目的尊重和支持。
       如果您需要在底部增加内容，请在src/config/footerConfig.ts中修改enable属性为true，然后编辑src/config/FooterConfig.html文件。
