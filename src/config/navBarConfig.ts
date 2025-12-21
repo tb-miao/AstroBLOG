@@ -19,25 +19,43 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		name: "链接",
 		url: "/links/",
 		icon: "material-symbols:link",
+		alt: "外部链接和工具",
 		children: [
 			{
 				name: "GitHub",
 				url: "https://github.com/tb-miao",
 				external: true,
 				icon: "fa6-brands:github",
+				alt: "GitHub",
 			},
 			{
 				name: "Bilibili",
 				url: "https://space.bilibili.com/3546708996786634",
 				external: true,
 				icon: "fa6-brands:bilibili",
+				alt: "Bilibili",
 			},
 			{
 				name: "Github文件加速",
 				url: "https://gh-proxy.com/",
 				external: true,
 				icon: "fa6-brands:github",
+				alt: "Github文件加速",
 			},
+			{
+				name: "统计",
+				url: "https://cloud.umami.is/share/pBFqYW1e5248KxEz",
+				external: true,
+				icon: "fa6-brands:osi",
+				alt: "统计",
+			},
+			{
+				name: "icon",
+				url: "https://icon-sets.iconify.design/fa6-brands/",
+				external: true,
+				icon: "fa6-brands:font-awesome",
+				alt: "icon",
+			}
 		],
 	});
 
@@ -52,6 +70,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		name: "关于",
 		url: "/content/",
 		icon: "material-symbols:info",
+		alt: "关于页面和相关信息",
 		children: [
 			...(siteConfig.pages.sponsor ? [LinkPreset.Sponsor] : []), // 根据配置决定是否添加赞助页面
 			LinkPreset.About,

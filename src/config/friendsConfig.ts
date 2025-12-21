@@ -103,6 +103,15 @@ export const friendsConfig: FriendLink[] = [
 		weight: 11, // 权重，数字越大排序越靠前
 		enabled: true, // 是否启用
 	},
+	{
+		title: "雨云",
+		imgurl: "https://www.rainyun.com/favicon.ico",
+		desc: "新一代云服务提供商",
+		siteurl: "https://www.rainyun.com/home",
+		tags: ["雨云"],
+		weight: 10, // 权重，数字越大排序越靠前
+		enabled: true, // 是否启用
+	},
 ];
 
 // 获取启用的友链并按权重排序

@@ -511,27 +511,163 @@ const processedLocalPlaylist =
   #aplayer-container {
     position: relative;
     z-index: 1000;
+    margin-bottom: var(--widget-gap-mobile);
   }
 
-  /* 确保播放器在固定模式下正确显示 */
-  #aplayer-container .aplayer-fixed {
-    z-index: 9999;
+  /* 美化 APlayer 播放器样式 */
+  #aplayer-container .aplayer {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--line-divider);
+    background: var(--card-bg);
+    transition: all var(--duration-medium) var(--ease-standard);
   }
 
-  /* 禁用 APlayer 初始化时的过渡动画，避免收缩效果 */
+  #aplayer-container .aplayer:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  /* 播放器头部样式 */
+  #aplayer-container .aplayer .aplayer-info {
+    border-bottom: 1px solid var(--line-divider);
+    background: var(--card-bg);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+
+  #aplayer-container .aplayer .aplayer-info .aplayer-music {
+    color: var(--primary);
+  }
+
+  #aplayer-container .aplayer .aplayer-info .aplayer-controller {
+    color: var(--content-meta);
+  }
+
+  /* 播放器控制按钮样式 */
+  #aplayer-container .aplayer .aplayer-controller .aplayer-bar-wrap {
+    background: var(--line-divider);
+  }
+
+  #aplayer-container .aplayer .aplayer-controller .aplayer-bar .aplayer-loaded {
+    background: var(--line-color);
+  }
+
+  #aplayer-container .aplayer .aplayer-controller .aplayer-bar .aplayer-played {
+    background: var(--btn-regular-bg);
+  }
+
+  #aplayer-container .aplayer .aplayer-controller .aplayer-bar .aplayer-thumb {
+    background: var(--btn-regular-bg);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  /* 播放器按钮样式 */
+  #aplayer-container .aplayer .aplayer-controller .aplayer-icon {
+    color: var(--content-meta);
+    transition: color var(--duration-fast) var(--ease-standard);
+  }
+
+  #aplayer-container .aplayer .aplayer-controller .aplayer-icon:hover {
+    color: var(--primary);
+  }
+
+  #aplayer-container .aplayer .aplayer-controller .aplayer-icon.aplayer-icon-play,
+  #aplayer-container .aplayer .aplayer-controller .aplayer-icon.aplayer-icon-pause {
+    color: var(--btn-regular-bg);
+  }
+
+  /* 播放列表样式 */
+  #aplayer-container .aplayer .aplayer-list {
+    border-top: 1px solid var(--line-divider);
+    background: var(--card-bg);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  }
+
+  #aplayer-container .aplayer .aplayer-list ol {
+    background: transparent;
+  }
+
+  #aplayer-container .aplayer .aplayer-list ol li {
+    border-bottom: 1px solid var(--line-divider);
+    color: var(--content-meta);
+    transition: all var(--duration-fast) var(--ease-standard);
+  }
+
+  #aplayer-container .aplayer .aplayer-list ol li:hover {
+    background: var(--btn-plain-bg-hover);
+    color: var(--primary);
+  }
+
+  #aplayer-container .aplayer .aplayer-list ol li.aplayer-list-light {
+    background: var(--btn-regular-bg);
+    color: var(--primary);
+  }
+
+  /* 固定模式下的样式优化 */
   #aplayer-container .aplayer.aplayer-fixed {
-    animation: none !important;
+    z-index: 9999;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--line-divider);
   }
-  
-  #aplayer-container .aplayer.aplayer-fixed .aplayer-body {
-    animation: none !important;
-    transition: none !important;
+
+  /* 迷你模式样式 */
+  #aplayer-container .aplayer.aplayer-mini {
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-lg);
   }
-  
-  /* 确保播放器初始化时就在右侧位置 */
-  #aplayer-container .aplayer.aplayer-fixed[data-positioned="right"] {
-    right: 0 !important;
-    left: unset !important;
+
+  #aplayer-container .aplayer.aplayer-mini .aplayer-body {
+    border-radius: var(--radius-full);
+  }
+
+  /* 播放状态动画 */
+  #aplayer-container .aplayer[data-playing="true"] {
+    box-shadow: var(--shadow-xl), 0 0 20px var(--btn-regular-bg);
+  }
+
+  /* 歌词显示样式 */
+  #aplayer-container .aplayer .aplayer-lrc {
+    background: var(--card-bg);
+    border-top: 1px solid var(--line-divider);
+  }
+
+  #aplayer-container .aplayer .aplayer-lrc p {
+    color: var(--primary);
+    text-shadow: 0 0 5px var(--card-bg);
+  }
+
+  /* 音量控制样式 */
+  #aplayer-container .aplayer .aplayer-volume-wrap {
+    background: var(--line-divider);
+  }
+
+  #aplayer-container .aplayer .aplayer-volume-bar {
+    background: var(--line-color);
+  }
+
+  #aplayer-container .aplayer .aplayer-volume-bar .aplayer-volume {
+    background: var(--btn-regular-bg);
+  }
+
+  /* 移动端优化 */
+  @media (max-width: 768px) {
+    #aplayer-container .aplayer {
+      border-radius: var(--radius-md);
+      margin: 0 var(--spacing-sm);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    #aplayer-container .aplayer.aplayer-fixed {
+      border-radius: var(--radius-md);
+      margin: 0;
+      box-shadow: var(--shadow-md);
+    }
+
+    #aplayer-container .aplayer:hover {
+      transform: none;
+      box-shadow: var(--shadow-md);
+    }
   }
 
   /* 移动端隐藏 - 通过 JavaScript 动态添加类 */
@@ -542,6 +678,17 @@ const processedLocalPlaylist =
   /* 移动端隐藏容器 */
   #aplayer-container.mobile-hide {
     display: none !important;
+  }
+
+  /* 确保播放器初始化时就在右侧位置 */
+  #aplayer-container .aplayer.aplayer-fixed[data-positioned="right"] {
+    right: 0 !important;
+    left: unset !important;
+  }
+
+  /* 平滑过渡动画 */
+  #aplayer-container .aplayer * {
+    transition: all var(--duration-fast) var(--ease-standard);
   }
 </style>
 

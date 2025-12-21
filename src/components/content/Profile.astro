@@ -40,7 +40,32 @@ import { url } from "@/utils/url-utils";
     <div class="text-center text-neutral-400 mb-2.5 transition">
       {profileConfig.bio}
     </div>
-        <div class="flex flex-wrap gap-2 justify-center mb-1">
+    
+    <!-- 多网站状态检测 -->
+    {profileConfig.websiteStatus?.enable && profileConfig.websiteStatus.websites && (
+      <div class="mb-3" data-check-interval={profileConfig.websiteStatus.checkInterval || 30000}>
+        <div class="text-sm font-medium text-neutral-600 dark:text-neutral-400 text-center mb-2"><b>网站状态监控</b></div>
+        <div class="space-y-2">
+          {profileConfig.websiteStatus.websites.map((website, index) => (
+            <div class="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800 rounded-lg" 
+                 data-website-index={index}
+                 data-website-name={website.name}
+                 data-website-url={website.url || ""}>
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-gray-400 animate-pulse" id={`status-indicator-${index}`}></div>
+                <span class="text-sm font-medium"><b><a href={website.url} target="_blank">{website.name}</a></b></span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs text-neutral-500" id={`status-text-${index}`}>检测中...</span>
+                <span class="text-xs text-neutral-500" id={`response-time-${index}`}></span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <div class="flex flex-wrap gap-2 justify-center mb-1">
             {profileConfig.links.length > 1 && profileConfig.links.map(item =>
                     {
                     const showName = item.showName;
@@ -104,3 +129,109 @@ import { url } from "@/utils/url-utils";
         </div>
   </div>
 </div>
+
+<script>
+// 多网站状态检测功能
+document.addEventListener('DOMContentLoaded', function() {
+  const websiteStatusContainer = document.querySelector('[data-check-interval]');
+  
+  // 如果网站状态检测功能被禁用或容器不存在，则退出
+  if (!websiteStatusContainer) return;
+  
+  // 获取所有网站状态项
+  const websiteItems = document.querySelectorAll('[data-website-index]');
+  
+  // 如果没有任何网站配置，则退出
+  if (websiteItems.length === 0) return;
+  
+  // 从数据属性获取配置间隔
+  const checkInterval = parseInt(websiteStatusContainer.dataset.checkInterval) || 30000;
+  
+    // 为每个网站创建检测函数
+    async function checkWebsiteStatus(websiteItem) {
+      const index = websiteItem.dataset.websiteIndex;
+      const websiteName = websiteItem.dataset.websiteName;
+      const configUrl = websiteItem.dataset.websiteUrl;
+      
+      const statusIndicator = document.getElementById(`status-indicator-${index}`);
+      const statusText = document.getElementById(`status-text-${index}`);
+      const responseTime = document.getElementById(`response-time-${index}`);
+      
+      // 确定要检测的网站URL
+      const websiteUrl = configUrl.trim() ? configUrl : window.location.origin;
+      
+      try {
+        const startTime = performance.now();
+        
+        // 使用 AbortController 设置超时（5秒）
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+        
+        // 使用 HEAD 请求检测网站状态，减少数据传输
+        const response = await fetch(websiteUrl, {
+          method: 'HEAD',
+          cache: 'no-cache',
+          mode: 'no-cors', // 避免CORS问题
+          signal: controller.signal,
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (compatible; WebsiteStatusChecker/1.0)'
+          }
+        });
+        
+        clearTimeout(timeoutId);
+        const endTime = performance.now();
+        const responseTimeMs = Math.round(endTime - startTime);
+        
+        // 对于 no-cors 模式，response.ok 可能不可用，检查响应类型
+        if (response.type === 'opaque') {
+          // no-cors 模式下，只要没有错误就认为在线
+          statusIndicator.className = 'w-2 h-2 rounded-full bg-green-500';
+          statusText.textContent = '在线';
+          responseTime.textContent = `${responseTimeMs}ms`;
+        } else if (response.ok) {
+          // 正常模式下检查响应状态
+          statusIndicator.className = 'w-2 h-2 rounded-full bg-green-500';
+          statusText.textContent = '在线';
+          responseTime.textContent = `${responseTimeMs}ms`;
+        } else {
+          // 网站返回错误状态
+          statusIndicator.className = 'w-2 h-2 rounded-full bg-yellow-500';
+          statusText.textContent = '异常';
+          responseTime.textContent = `${response.status}`;
+        }
+        
+      } catch (error) {
+        // 更详细的错误处理
+        if (error.name === 'AbortError') {
+          statusIndicator.className = 'w-2 h-2 rounded-full bg-red-500';
+          statusText.textContent = '超时';
+          responseTime.textContent = '>5s';
+        } else if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
+          statusIndicator.className = 'w-2 h-2 rounded-full bg-red-500';
+          statusText.textContent = '网络错误';
+          responseTime.textContent = '错误';
+        } else {
+          statusIndicator.className = 'w-2 h-2 rounded-full bg-red-500';
+          statusText.textContent = '离线';
+          responseTime.textContent = '错误';
+        }
+      }
+    }
+  
+  // 检测所有网站状态
+  async function checkAllWebsites() {
+    const promises = Array.from(websiteItems).map(websiteItem => 
+      checkWebsiteStatus(websiteItem)
+    );
+    
+    // 同时检测所有网站，但等待所有检测完成
+    await Promise.allSettled(promises);
+  }
+  
+  // 页面加载时立即检测所有网站
+  checkAllWebsites();
+  
+  // 根据配置间隔自动检测所有网站
+  setInterval(checkAllWebsites, checkInterval);
+});
+</script>

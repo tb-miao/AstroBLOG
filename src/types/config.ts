@@ -96,6 +96,7 @@ export type NavBarLink = {
 	external?: boolean;
 	icon?: string; // 菜单项图标
 	children?: (NavBarLink | LinkPreset)[]; // 支持子菜单，可以是NavBarLink或LinkPreset
+	alt?: string; // 菜单项提示文字
 };
 
 export enum NavBarSearchMethod {
@@ -141,6 +142,14 @@ export type ProfileConfig = {
 		icon: string;
 		showName?: boolean;
 	}[];
+	websiteStatus?: {
+		enable?: boolean;
+		websites?: {
+			name: string;
+			url: string;
+		}[];
+		checkInterval?: number;
+	};
 };
 
 export type LicenseConfig = {
