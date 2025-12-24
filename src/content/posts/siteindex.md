@@ -3,7 +3,7 @@ title: 入站指引
 published: 2025-12-20
 updated: 2025-12-21
 pinned: true
-description: "入站指引，本站日志在这里。"
+description: "入站指引，日志在这里。"
 image: "api"
 tags: ["入站指引"]
 category: 入站指引
@@ -17,11 +17,14 @@ draft: false
 请访问：
 - [关于](https://tbmiao.dpdns.org/about)
 
-# 更新记录
+## 更新记录
+
 <script>
   // 自动从 GitHub 拉取三个仓库的提交记录，并按仓库分组展示
   const repos = [
     { owner: 'tb-miao', repo: 'AstroBLOG', name: '该博客' },
+    { owner: 'tb-miao', repo: 'AUNya_Personal-Homepage', name: '主页' },
+    { owner: 'tb-miao', repo: 'uptime-monitor', name: 'AUNyaの网站监控' },
   ];
 
   async function fetchCommits() {

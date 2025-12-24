@@ -44,17 +44,9 @@ export const profileConfig: ProfileConfig = {
 				url: "", // 留空则检测当前网站
 			},
 			{
-				name: "主 页",
-				url: "https://lab.tbmiao.dpdns.org/",
-			},
-			{
 				name: "网站监测",
 				url: "https://status.tbmiao.dpdns.org/",
 			},
-			{
-				name: "Ba_logo",
-				url: "https://ba.tbmiao.dpdns.org/",
-			}
 		],
 		checkInterval: 30000, // 检测间隔，单位毫秒
 	},
