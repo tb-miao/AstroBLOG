@@ -144,22 +144,21 @@ export default defineConfig({
 			rehypeSlug,
 			rehypeMermaid,
 			rehypeFigure,
-				[rehypeEmailProtection, { method: "base64" }], // 邮箱保护插件，支持 'base64' 或 'rot13'
-				[
-					rehypeComponents,
-					{
-						components: {
-							a: ExternalLinkComponent,
-							github: GithubCardComponent,
-							note: (x, y) => AdmonitionComponent(x, y, "note"),
-							tip: (x, y) => AdmonitionComponent(x, y, "tip"),
-							important: (x, y) => AdmonitionComponent(x, y, "important"),
-							caution: (x, y) => AdmonitionComponent(x, y, "caution"),
-							warning: (x, y) => AdmonitionComponent(x, y, "warning"),
-						},
-					},
-				],
+			[rehypeEmailProtection, { method: "base64" }], // 邮箱保护插件，支持 'base64' 或 'rot13'
 			[
+				rehypeComponents,
+				{
+					components: {
+						github: GithubCardComponent,
+						note: (x, y) => AdmonitionComponent(x, y, "note"),
+						tip: (x, y) => AdmonitionComponent(x, y, "tip"),
+						important: (x, y) => AdmonitionComponent(x, y, "important"),
+						caution: (x, y) => AdmonitionComponent(x, y, "caution"),
+						warning: (x, y) => AdmonitionComponent(x, y, "warning"),
+					},
+				},
+			],
+		[
 				rehypeAutolinkHeadings,
 				{
 					behavior: "append",
